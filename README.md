@@ -28,6 +28,9 @@ ros2 launch wheeltec_robot_sim gazebo.launch.py
 ros2 launch slam_toolbox online_async_launch.py \
 slam_params_file:=$(ros2 pkg prefix --share wheeltec_robot_sim)/params/mapper_params_sim.yaml \
 use_sim_time:=True
+
+#开新终端启动RVIZ（在此目录下找到wheeltec.rviz配置文件/wheeltec_robot_sim/src/wheeltec_robot_sim/rvizconfig）
+rviz2 
 ```
 
 **启动键盘控制小车移动建图:**
