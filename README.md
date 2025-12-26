@@ -39,7 +39,7 @@ rviz2
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-**保存地图***
+**保存地图**
 ```bash
 #打开新终端保存地图（保存完毕可以关闭键盘控制和SLAM建图的终端）
 ros2 run nav2_map_server map_saver_cli -f ./src/wheeltec_robot_sim/maps/my_map
