@@ -10,7 +10,7 @@ def generate_launch_description():
     pkg_share = get_package_share_directory(pkg_name)
     
     # 1. 地图路径
-    map_file_path = os.path.join(pkg_share, 'maps', 'my_lab_map.yaml')
+    map_file_path = os.path.join(pkg_share, 'maps', 'my_map.yaml')
     
     # 2. 参数文件路径
     params_file_path = os.path.join(pkg_share, 'params', 'nav2_params_sim.yaml')
