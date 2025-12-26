@@ -1,0 +1,32 @@
+slam_toolbox:
+  ros__parameters:
+    # 核心：声明这是仿真环境
+    use_sim_time: true
+
+    # 核心修复：将 TF 查找容忍度从 0.2s 提升到 1.0s
+    # 这是解决 "Failed to compute odom pose" 的唯一正解
+    transform_timeout: 1.0
+    tf_buffer_duration: 30.0
+
+    # 基础坐标系定义
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+    mode: mapping 
+
+    # 性能优化
+    debug_logging: false
+    throttle_scans: 1
+    map_update_interval: 1.0
+    resolution: 0.05
+    min_laser_range: 0.4
+    max_laser_range: 12.0
+    
+    # 求解器标准配置
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
